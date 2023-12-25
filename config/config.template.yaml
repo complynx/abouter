@@ -1,0 +1,15 @@
+openai:
+  api_key: "YOUR_TOKEN" # or ommit to use OPENAI_TOOPENAI_API_KEYKEN from env
+  model: "gpt-3.5-turbo-1106"
+  prompt: "your prompt"
+
+server:
+  location: "yourdomain"
+  port: 8080 # server port
+
+logging:
+  level: "INFO" # or ommit to use LOGGING_LEVEL from env
+
+db:
+  address: mongodb://admin:test@mongo:27017/bots_db
+  collection: prerendered_abouts
