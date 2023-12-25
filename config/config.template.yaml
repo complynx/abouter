@@ -13,3 +13,5 @@ logging:
 db:
   address: mongodb://admin:test@mongo:27017/bots_db
   collection: prerendered_abouts
+abouts_cap: 300
+simulation_chunk_delay: 0.1
