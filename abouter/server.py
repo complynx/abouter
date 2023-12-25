@@ -93,13 +93,17 @@ class WS(tornado.websocket.WebSocketHandler):
         logger.debug("WebSocket closed")
     
     def check_origin(self, origin):
-        loc = self.app.config.server.location 
+        loc = self.app.config.server.location
         if loc == "":
             return True
         
-        parsed_origin = urlparse(origin)
-        return parsed_origin.netloc == loc or parsed_origin.netloc.endswith(f".{loc}")
-
+        if isinstance(loc, list):
+            for loc1 in loc:
+                parsed_origin = urlparse(origin)
+                return parsed_origin.netloc == loc1 or parsed_origin.netloc.endswith(f".{loc1}")
+        else:
+            parsed_origin = urlparse(origin)
+            return parsed_origin.netloc == loc or parsed_origin.netloc.endswith(f".{loc}")
 
 async def create_server(config: Config, base_app):
     tornado.platform.asyncio.AsyncIOMainLoop().install()

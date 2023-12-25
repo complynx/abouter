@@ -13,7 +13,7 @@ class LoggingSettings(BaseSettings):
     level: str = Field("WARNING", env="LOGGING_LEVEL")
 
 class ServerSettings(BaseSettings):
-    location: str
+    location: str|list[str]
     port: int = Field(8080, env="SERVER_PORT")
 
 class MongoDB(BaseSettings):

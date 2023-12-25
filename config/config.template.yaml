@@ -1,5 +1,5 @@
 openai:
-  api_key: "YOUR_TOKEN" # or ommit to use OPENAI_TOOPENAI_API_KEYKEN from env
+  api_key: "YOUR_TOKEN" # or ommit to use OPENAI_API_KEY from env
   model: "gpt-3.5-turbo-1106"
   prompt: "your prompt"
 
